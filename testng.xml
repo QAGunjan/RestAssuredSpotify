@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="MainXMLSuiteFile">
+	<test thread-count="5" name="MainXMLTestFile">
+		<classes>
+			<class name="com.spotify.oauth2.testcases.PlaylistTestCases">
+				<methods>
+					<include name="ValidateCreatingAPlaylist" />
+					<include name="ValidateFetchingAPlaylist" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- MainXMLTestFile -->
+</suite> <!-- MainXMLSuiteFile -->
