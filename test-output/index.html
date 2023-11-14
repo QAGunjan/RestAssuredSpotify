@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -105,6 +105,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-MainXMLSuiteFile" title="com.spotify.oauth2.testcases.PlaylistTestCases" class="method navigator-link" hash-for-method="ValidateCreatingAPlaylist">ValidateCreatingAPlaylist</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MainXMLSuiteFile" title="com.spotify.oauth2.testcases.PlaylistTestCases" class="method navigator-link" hash-for-method="ValidateFetchingAPlaylist">ValidateFetchingAPlaylist</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-MainXMLSuiteFile -->
@@ -134,6 +139,15 @@
 (ValidateCreatingAPlaylist)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateFetchingAPlaylist">
+                  </a> <!-- ValidateFetchingAPlaylist -->
+                  <span class="method-name">ValidateFetchingAPlaylist</span>
+                  <em>
+(ValidateFetchingAPlaylist)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-MainXMLSuiteFile-class-passed -->
         </div> <!-- panel MainXMLSuiteFile -->
@@ -151,6 +165,7 @@
       &lt;class name=&quot;com.spotify.oauth2.testcases.PlaylistTestCases&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;ValidateCreatingAPlaylist&quot;/&gt;
+          &lt;include name=&quot;ValidateFetchingAPlaylist&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.spotify.oauth2.testcases.PlaylistTestCases --&gt;
     &lt;/classes&gt;
@@ -192,16 +207,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'ValidateCreatingAPlaylist')
 data.setCell(0, 2, 'com.spotify.oauth2.testcases.PlaylistTestCases')
-data.setCell(0, 3, 4990);
+data.setCell(0, 3, 5253);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'ValidateFetchingAPlaylist')
+data.setCell(1, 2, 'com.spotify.oauth2.testcases.PlaylistTestCases')
+data.setCell(1, 3, 367);
 window.suiteTableData['MainXMLSuiteFile']= { tableData: data, tableDiv: 'times-div-MainXMLSuiteFile'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
               <div id="times-div-MainXMLSuiteFile">
               </div> <!-- times-div-MainXMLSuiteFile -->
             </div> <!-- times-div -->
@@ -216,16 +235,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-MainXMLSuiteFile" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.spotify.oauth2.testcases.PlaylistTestCases</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">ValidateFetchingAPlaylist</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-MainXMLSuiteFile" class="panel">
@@ -238,6 +250,10 @@ return data;
               <div class="test-method">
                 <span class="method-name">ValidateCreatingAPlaylist</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">ValidateFetchingAPlaylist</span>
+                <span class="method-start">5358 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
