@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.restassured.spotify</groupId>
 	<artifactId>RestAssuredSpotify</artifactId>
@@ -50,13 +52,15 @@
 			<version>7.5</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
+		<!--
+		https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>json-schema-validator</artifactId>
 			<version>5.3.2</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<!--
+		https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
@@ -75,5 +79,12 @@
 			<artifactId>allure-testng</artifactId>
 			<version>2.24.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+
 	</dependencies>
 </project>

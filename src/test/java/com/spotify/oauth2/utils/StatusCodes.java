@@ -5,7 +5,8 @@ import lombok.Getter;
 public enum StatusCodes {
 
 	CODE_200(200, "Success"), 
-	CODE_201(201, "Created");
+	CODE_201(201, "Created"),
+	CODE_400(400, "Bad Request");
 
 	public final int code;
 	public final String message;

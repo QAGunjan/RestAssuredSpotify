@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -105,6 +105,16 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-MainXMLSuiteFile" title="com.spotify.oauth2.testcases.PlaylistTestCases" class="method navigator-link" hash-for-method="ValidateCreatingAPlaylist">ValidateCreatingAPlaylist</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MainXMLSuiteFile" title="com.spotify.oauth2.testcases.PlaylistTestCases" class="method navigator-link" hash-for-method="ValidateCreatingAPlaylistWithoutPlayListDescription">ValidateCreatingAPlaylistWithoutPlayListDescription</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MainXMLSuiteFile" title="com.spotify.oauth2.testcases.PlaylistTestCases" class="method navigator-link" hash-for-method="ValidateCreatingAPlaylistWithoutPlayListName">ValidateCreatingAPlaylistWithoutPlayListName</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -141,6 +151,24 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="ValidateCreatingAPlaylistWithoutPlayListDescription">
+                  </a> <!-- ValidateCreatingAPlaylistWithoutPlayListDescription -->
+                  <span class="method-name">ValidateCreatingAPlaylistWithoutPlayListDescription</span>
+                  <em>
+(ValidateCreatingAPlaylistWithoutPlayListDescription)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidateCreatingAPlaylistWithoutPlayListName">
+                  </a> <!-- ValidateCreatingAPlaylistWithoutPlayListName -->
+                  <span class="method-name">ValidateCreatingAPlaylistWithoutPlayListName</span>
+                  <em>
+(ValidateCreatingAPlaylistWithoutPlayListName)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="ValidateFetchingAPlaylist">
                   </a> <!-- ValidateFetchingAPlaylist -->
                   <span class="method-name">ValidateFetchingAPlaylist</span>
@@ -166,6 +194,8 @@
         &lt;methods&gt;
           &lt;include name=&quot;ValidateCreatingAPlaylist&quot;/&gt;
           &lt;include name=&quot;ValidateFetchingAPlaylist&quot;/&gt;
+          &lt;include name=&quot;ValidateCreatingAPlaylistWithoutPlayListName&quot;/&gt;
+          &lt;include name=&quot;ValidateCreatingAPlaylistWithoutPlayListDescription&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.spotify.oauth2.testcases.PlaylistTestCases --&gt;
     &lt;/classes&gt;
@@ -207,20 +237,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'ValidateCreatingAPlaylist')
 data.setCell(0, 2, 'com.spotify.oauth2.testcases.PlaylistTestCases')
-data.setCell(0, 3, 5253);
+data.setCell(0, 3, 5182);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'ValidateFetchingAPlaylist')
+data.setCell(1, 1, 'ValidateCreatingAPlaylistWithoutPlayListDescription')
 data.setCell(1, 2, 'com.spotify.oauth2.testcases.PlaylistTestCases')
-data.setCell(1, 3, 367);
+data.setCell(1, 3, 658);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'ValidateFetchingAPlaylist')
+data.setCell(2, 2, 'com.spotify.oauth2.testcases.PlaylistTestCases')
+data.setCell(2, 3, 495);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'ValidateCreatingAPlaylistWithoutPlayListName')
+data.setCell(3, 2, 'com.spotify.oauth2.testcases.PlaylistTestCases')
+data.setCell(3, 3, 310);
 window.suiteTableData['MainXMLSuiteFile']= { tableData: data, tableDiv: 'times-div-MainXMLSuiteFile'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 6 seconds</span>
               <div id="times-div-MainXMLSuiteFile">
               </div> <!-- times-div-MainXMLSuiteFile -->
             </div> <!-- times-div -->
@@ -253,7 +291,15 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">ValidateFetchingAPlaylist</span>
-                <span class="method-start">5358 ms</span>
+                <span class="method-start">5278 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">ValidateCreatingAPlaylistWithoutPlayListName</span>
+                <span class="method-start">5777 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">ValidateCreatingAPlaylistWithoutPlayListDescription</span>
+                <span class="method-start">6096 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

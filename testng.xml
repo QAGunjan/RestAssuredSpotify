@@ -5,10 +5,14 @@
 		<classes>
 			<class name="com.spotify.oauth2.testcases.PlaylistTestCases">
 				<methods>
-					<include name="ValidateCreatingAPlaylist" />
-					<include name="ValidateFetchingAPlaylist" />
+					<include name="ValidateCreatingAPlaylist"></include>
+					<include name="ValidateFetchingAPlaylist"></include>
+					<include name="ValidateCreatingAPlaylistWithoutPlayListName"></include>
+					<include name="ValidateCreatingAPlaylistWithoutPlayListDescription"></include>
 				</methods>
 			</class>
 		</classes>
-	</test> <!-- MainXMLTestFile -->
-</suite> <!-- MainXMLSuiteFile -->
+	</test> <!--
+	MainXMLTestFile -->
+</suite> <!--
+MainXMLSuiteFile -->

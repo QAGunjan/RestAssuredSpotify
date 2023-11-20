@@ -5,7 +5,6 @@
     <classes>
       <class name="com.spotify.oauth2.testcases.PlaylistTestCases">
         <methods>
-          <include name="ValidateFetchingAPlaylist"/>
           <include name="ValidateCreatingAPlaylist"/>
         </methods>
       </class> <!-- com.spotify.oauth2.testcases.PlaylistTestCases -->

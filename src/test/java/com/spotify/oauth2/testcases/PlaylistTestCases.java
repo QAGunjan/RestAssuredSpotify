@@ -10,8 +10,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.spotify.oauth2.applicationApi.PlayListApi;
+import com.spotify.oauth2.pojo.ErrorRoot;
+import com.spotify.oauth2.pojo.Error;
 import com.spotify.oauth2.pojo.Playlist;
 import com.spotify.oauth2.utils.DataLoader;
+import com.spotify.oauth2.utils.FakerData;
 import com.spotify.oauth2.utils.SpecificationsBuilder;
 import com.spotify.oauth2.utils.StatusCodes;
 
@@ -47,8 +50,11 @@ import java.util.Random;
 @Feature("Playlist API")
 public class PlaylistTestCases {
 
-	public Playlist requestplaylist;
+	public Playlist requestplaylist = new Playlist();
 	public Playlist responsePlayList;
+	public ErrorRoot requestError;
+	public ErrorRoot responseError;
+	private int randomInt;
 
 	public Playlist SetUp(String ID, String Name, Response response) {
 		responsePlayList = response.as(Playlist.class);
@@ -59,27 +65,49 @@ public class PlaylistTestCases {
 		return responsePlayList;
 	}
 
-	@Description("This the for creating the PlayList")
+	@Description("This is for creating the PlayList")
 	@Story("Create a playlist story")
 	@Test(description = "ValidateCreatingAPlaylist")
 	public void ValidateCreatingAPlaylist() throws IOException {
 
-		playlistBuilder(DataLoader.getInstance().getPlaylistName(), DataLoader.getInstance().getPlaylistDescription(),
+//		playlistBuilder(DataLoader.getInstance().getPlaylistName(), DataLoader.getInstance().getPlaylistDescription(),
+//				false);
+		
+		playlistBuilder(FakerData.GenerateName(), FakerData.GenerateDescription(),
 				false);
 		Response response = PlayListApi.post(requestplaylist);
 		assertStatusCode(response.statusCode(), StatusCodes.CODE_201);
-
 		SetUp("id", "name", response);
-
-//		String ID = response.path("id");
-//		responsePlayList.setId(Id);
-
-//		response.path("name");
-
 		assertPlaylist(responsePlayList, requestplaylist);
 
 	}
 
+	@Description("This is for creating the PlayList without the PlayList name")
+	@Story("Create a playlist story")
+	@Test(description = "ValidateCreatingAPlaylistWithoutPlayListName")
+	public void ValidateCreatingAPlaylistWithoutPlayListName() throws IOException {
+		playlistBuilder("", FakerData.GenerateDescription(), false);
+		Response response = PlayListApi.post(requestplaylist);
+		assertStatusCode(response.statusCode(), StatusCodes.CODE_400);
+
+		responseError = response.as(ErrorRoot.class);
+		assertError(responseError, 400, "Missing required field: name");
+
+	}
+
+	@Description("This is for creating the PlayList without the PlayList Description")
+	@Story("Create a playlist story")
+	@Test(description = "ValidateCreatingAPlaylistWithoutPlayListDescription")
+	public void ValidateCreatingAPlaylistWithoutPlayListDescription() throws IOException {
+		playlistBuilder(FakerData.GenerateName(), "", false);
+		Response response = PlayListApi.post(requestplaylist);
+		assertStatusCode(response.statusCode(), StatusCodes.CODE_201);
+		responsePlayList = response.as(Playlist.class);
+		assertPlaylist(responsePlayList, requestplaylist);
+
+	}
+
+	@Description("This is for fetching the PlayList")
 	@Story("Fetching a playlist story")
 	@Test(description = "ValidateFetchingAPlaylist")
 	public void ValidateFetchingAPlaylist() throws IOException {
@@ -99,12 +127,26 @@ public class PlaylistTestCases {
 
 	public Playlist playlistBuilder(String name, String description, boolean _public) {
 
-		Random randomGenerator = new Random();
-		int randomInt = randomGenerator.nextInt(100);
+//		Random randomGenerator = new Random();
+//		randomInt = randomGenerator.nextInt(100);
+//
+//		if (!name.isEmpty()) {
+//			requestplaylist.setName(name + randomInt);
+//		}
+//
+//		else {
+//			requestplaylist.setName(name);
+//
+//		}
+//
+//		if (!description.isEmpty()) {
+//			requestplaylist.setDescription(description + randomInt);
+//		} else {
+//			requestplaylist.setDescription(description);
+//		}
 
-		requestplaylist = new Playlist();
-		requestplaylist.setName(name + randomInt);
-		requestplaylist.setDescription(description + randomInt);
+		requestplaylist.setName(name);
+		requestplaylist.setDescription(description);
 		requestplaylist.set_public(_public);
 
 		return requestplaylist;
@@ -112,6 +154,11 @@ public class PlaylistTestCases {
 
 	public void assertStatusCode(int ActualStatusCode, StatusCodes statuscode) {
 		assertThat(ActualStatusCode, equalTo(statuscode.code));
+	}
+
+	public void assertError(ErrorRoot responseError, int ExpectedStatusCode, String ExpectedMessage) {
+		assertThat(responseError.getError().getStatus(), equalTo(ExpectedStatusCode));
+		assertThat(responseError.getError().getMessage(), equalTo(ExpectedMessage));
 	}
 
 	public void assertPlaylist(Playlist responsePlayList, Playlist requestplaylist) {

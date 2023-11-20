@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [MainXMLSuiteFile]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="MainXMLTestFile(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="com.spotify.oauth2.testcases.PlaylistTestCases">
         <methods>
           <include name="ValidateFetchingAPlaylist"/>
-          <include name="ValidateCreatingAPlaylist"/>
         </methods>
       </class> <!-- com.spotify.oauth2.testcases.PlaylistTestCases -->
     </classes>
-  </test> <!-- MainXMLTestFile(failed) -->
-</suite> <!-- Failed suite [MainXMLSuiteFile] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
