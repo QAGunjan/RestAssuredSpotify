@@ -5,8 +5,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 
-public class ExternalUrls__1 {
+public class ExternalUrls__2 {
 
     @JsonProperty("spotify")
     private String spotify;

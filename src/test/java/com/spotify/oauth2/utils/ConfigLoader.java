@@ -45,5 +45,10 @@ public class ConfigLoader {
 		return prop.getProperty("user_id");
 
 	}
+	
+	public String getTrackID() {
+		return prop.getProperty("track_id");
+
+	}
 
 }

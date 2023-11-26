@@ -1,0 +1,333 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1700582164.json", 
+	"title": "Root", 
+	"type": "object",
+	"required": [
+		"collaborative",
+		"description",
+		"external_urls",
+		"followers",
+		"href",
+		"id",
+		"images",
+		"name",
+		"owner",
+		"primary_color",
+		"public",
+		"snapshot_id",
+		"tracks",
+		"type",
+		"uri"
+	],
+	"properties": {
+		"collaborative": {
+			"$id": "#root/collaborative", 
+			"title": "Collaborative", 
+			"type": "boolean",
+			"examples": [
+				false
+			],
+			"default": true
+		},
+		"description": {
+			"$id": "#root/description", 
+			"title": "Description", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"VNQCOQLEUZFOK"
+			],
+			"pattern": "^.*$"
+		},
+		"external_urls": {
+			"$id": "#root/external_urls", 
+			"title": "External_urls", 
+			"type": "object",
+			"required": [
+				"spotify"
+			],
+			"properties": {
+				"spotify": {
+					"$id": "#root/external_urls/spotify", 
+					"title": "Spotify", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"https://open.spotify.com/playlist/2QBSpizvV7gWOOb3D0pUVY"
+					],
+					"pattern": "^.*$"
+				}
+			}
+		}
+,
+		"followers": {
+			"$id": "#root/followers", 
+			"title": "Followers", 
+			"type": "object",
+			"required": [
+				"href",
+				"total"
+			],
+			"properties": {
+				"href": {
+					"$id": "#root/followers/href", 
+					"title": "Href", 
+					"type": "null",
+					"default": null
+				},
+				"total": {
+					"$id": "#root/followers/total", 
+					"title": "Total", 
+					"type": "integer",
+					"examples": [
+						0
+					],
+					"default": 0
+				}
+			}
+		}
+,
+		"href": {
+			"$id": "#root/href", 
+			"title": "Href", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"https://api.spotify.com/v1/playlists/2QBSpizvV7gWOOb3D0pUVY"
+			],
+			"pattern": "^.*$"
+		},
+		"id": {
+			"$id": "#root/id", 
+			"title": "Id", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"2QBSpizvV7gWOOb3D0pUVY"
+			],
+			"pattern": "^.*$"
+		},
+		"images": {
+			"$id": "#root/images", 
+			"title": "Images", 
+			"type": "array",
+			"default": []
+		},
+		"name": {
+			"$id": "#root/name", 
+			"title": "Name", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"LLGPGRNFNC"
+			],
+			"pattern": "^.*$"
+		},
+		"owner": {
+			"$id": "#root/owner", 
+			"title": "Owner", 
+			"type": "object",
+			"required": [
+				"display_name",
+				"external_urls",
+				"href",
+				"id",
+				"type",
+				"uri"
+			],
+			"properties": {
+				"display_name": {
+					"$id": "#root/owner/display_name", 
+					"title": "Display_name", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"Soniya Aggarwal"
+					],
+					"pattern": "^.*$"
+				},
+				"external_urls": {
+					"$id": "#root/owner/external_urls", 
+					"title": "External_urls", 
+					"type": "object",
+					"required": [
+						"spotify"
+					],
+					"properties": {
+						"spotify": {
+							"$id": "#root/owner/external_urls/spotify", 
+							"title": "Spotify", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"https://open.spotify.com/user/31oa67b2brdwmoqwja5mfnvpcafa"
+							],
+							"pattern": "^.*$"
+						}
+					}
+				}
+,
+				"href": {
+					"$id": "#root/owner/href", 
+					"title": "Href", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"https://api.spotify.com/v1/users/31oa67b2brdwmoqwja5mfnvpcafa"
+					],
+					"pattern": "^.*$"
+				},
+				"id": {
+					"$id": "#root/owner/id", 
+					"title": "Id", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"31oa67b2brdwmoqwja5mfnvpcafa"
+					],
+					"pattern": "^.*$"
+				},
+				"type": {
+					"$id": "#root/owner/type", 
+					"title": "Type", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"user"
+					],
+					"pattern": "^.*$"
+				},
+				"uri": {
+					"$id": "#root/owner/uri", 
+					"title": "Uri", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"spotify:user:31oa67b2brdwmoqwja5mfnvpcafa"
+					],
+					"pattern": "^.*$"
+				}
+			}
+		}
+,
+		"primary_color": {
+			"$id": "#root/primary_color", 
+			"title": "Primary_color", 
+			"type": "null",
+			"default": null
+		},
+		"public": {
+			"$id": "#root/public", 
+			"title": "Public", 
+			"type": "boolean",
+			"examples": [
+				false
+			],
+			"default": true
+		},
+		"snapshot_id": {
+			"$id": "#root/snapshot_id", 
+			"title": "Snapshot_id", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"MixiNGNiMWQyNTY5ZmI4ZjlmZmY1NDkwMTQ1MjNkYzM2NzkyZjI4YWVm"
+			],
+			"pattern": "^.*$"
+		},
+		"tracks": {
+			"$id": "#root/tracks", 
+			"title": "Tracks", 
+			"type": "object",
+			"required": [
+				"href",
+				"items",
+				"limit",
+				"next",
+				"offset",
+				"previous",
+				"total"
+			],
+			"properties": {
+				"href": {
+					"$id": "#root/tracks/href", 
+					"title": "Href", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"https://api.spotify.com/v1/playlists/2QBSpizvV7gWOOb3D0pUVY/tracks?offset=0&limit=100"
+					],
+					"pattern": "^.*$"
+				},
+				"items": {
+					"$id": "#root/tracks/items", 
+					"title": "Items", 
+					"type": "array",
+					"default": []
+				},
+				"limit": {
+					"$id": "#root/tracks/limit", 
+					"title": "Limit", 
+					"type": "integer",
+					"examples": [
+						100
+					],
+					"default": 0
+				},
+				"next": {
+					"$id": "#root/tracks/next", 
+					"title": "Next", 
+					"type": "null",
+					"default": null
+				},
+				"offset": {
+					"$id": "#root/tracks/offset", 
+					"title": "Offset", 
+					"type": "integer",
+					"examples": [
+						0
+					],
+					"default": 0
+				},
+				"previous": {
+					"$id": "#root/tracks/previous", 
+					"title": "Previous", 
+					"type": "null",
+					"default": null
+				},
+				"total": {
+					"$id": "#root/tracks/total", 
+					"title": "Total", 
+					"type": "integer",
+					"examples": [
+						0
+					],
+					"default": 0
+				}
+			}
+		}
+,
+		"type": {
+			"$id": "#root/type", 
+			"title": "Type", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"playlist"
+			],
+			"pattern": "^.*$"
+		},
+		"uri": {
+			"$id": "#root/uri", 
+			"title": "Uri", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"spotify:playlist:2QBSpizvV7gWOOb3D0pUVY"
+			],
+			"pattern": "^.*$"
+		}
+	}
+}

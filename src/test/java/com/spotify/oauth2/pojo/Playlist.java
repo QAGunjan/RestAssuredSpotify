@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import io.restassured.response.Response;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -21,6 +22,9 @@ import lombok.extern.jackson.Jacksonized;
 
 public class Playlist {
 
+	public static Playlist requestplaylist;
+	public static Playlist responsePlayList;
+	
 	@JsonProperty("collaborative")
 	private Boolean collaborative;
 	@JsonProperty("description")
@@ -52,4 +56,25 @@ public class Playlist {
 	@JsonProperty("uri")
 	private String uri;
 
+	public static Playlist playlistBuilder(String name, String description, boolean _public) {
+		requestplaylist = new Playlist();
+		requestplaylist.setName(name);
+		requestplaylist.setDescription(description);
+		requestplaylist.set_public(_public);
+
+		return requestplaylist;
+
+	}
+	
+	public static Playlist SetUp(String ID, String Name, Response response) {
+		 responsePlayList = response.as(Playlist.class);
+
+		responsePlayList.setId(response.path(ID));
+		responsePlayList.setName(response.path(Name));
+
+		return responsePlayList;
+	}
+	
+	
+	
 }

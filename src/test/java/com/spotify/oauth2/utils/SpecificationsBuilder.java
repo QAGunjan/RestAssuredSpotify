@@ -24,8 +24,7 @@ public class SpecificationsBuilder {
 		return new RequestSpecBuilder()
 				.setBaseUri("https://api.spotify.com")
 				.setBasePath(Routes.BASE_PATH)
-				.addHeader("Authorization", "Bearer " + TokenManager.getToken())
-				.setContentType(ContentType.JSON)
+//				.addHeader("Authorization", "Bearer " + TokenManager.getToken())
 				.log(LogDetail.ALL)
 				.build();
 
@@ -48,6 +47,7 @@ public class SpecificationsBuilder {
 				.log(LogDetail.ALL)
 				.build();
 	}
+	
 
 	public static ResponseSpecification getResponseSpec() {
 		return new ResponseSpecBuilder()
@@ -56,5 +56,14 @@ public class SpecificationsBuilder {
 				.build();
 
 	}
+	
+	public static ResponseSpecification getResponseSpecWithNoExpectedContentType() {
+		return new ResponseSpecBuilder()
+				.log(LogDetail.ALL)
+				.build();
+
+	}
+	
+
 
 }
