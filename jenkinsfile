@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Getting Code from Github') {
+        stage('Geting Code from Github') {
             steps {
                 git 'https://github.com/QAGunjan/RestAssuredSpotify.git'
             }
@@ -19,8 +19,8 @@ pipeline {
     }
     stage('TestRunning') {
             steps {
-                bat 'mvn clean test'
+                bat 'mvn clean test'         
             }
-            
-        }
+    }
+    }
     }
