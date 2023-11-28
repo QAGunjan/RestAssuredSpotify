@@ -22,11 +22,5 @@ pipeline {
                 bat 'mvn clean test'
             }
             
-            post {
-               
-                success {
-                   allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
-                   emailext attachLog: true, attachmentsPattern: '**/Reports/index.html', body: '$DEFAULT_CONTENT', subject: '$DEFAULT_SUBJECT', to: 'gunjanrawat033@gmail.com'				}
-            }
         }
     }
