@@ -1,80 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="17" passed="17" failed="0" skipped="0">
+<testng-results ignored="16" total="17" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-25T19:04:49 IST" name="MainXMLSuiteFile" finished-at="2023-11-25T19:05:00 IST" duration-ms="11660">
+  <suite started-at="2023-11-27T16:59:25 IST" name="MainXMLSuiteFile" finished-at="2023-11-27T16:59:33 IST" duration-ms="7915">
     <groups>
     </groups>
-    <test started-at="2023-11-25T19:04:49 IST" name="MainXMLTestFile" finished-at="2023-11-25T19:05:00 IST" duration-ms="11660">
+    <test started-at="2023-11-27T16:59:25 IST" name="MainXMLTestFile" finished-at="2023-11-27T16:59:33 IST" duration-ms="7915">
       <class name="com.spotify.oauth2.testcases.PlaylistTestCases">
-        <test-method signature="ValidateCreatingAPlaylist()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@3688eb5b]" started-at="2023-11-25T19:04:49 IST" name="ValidateCreatingAPlaylist" description="ValidateCreatingAPlaylist" finished-at="2023-11-25T19:04:54 IST" duration-ms="4740" status="PASS">
+        <test-method signature="ValidateCreatingAPlaylist()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@41b1f51e]" started-at="2023-11-27T16:59:25 IST" name="ValidateCreatingAPlaylist" description="ValidateCreatingAPlaylist" finished-at="2023-11-27T16:59:33 IST" duration-ms="7669" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateCreatingAPlaylist -->
-        <test-method signature="ValidateFetchingAPlaylist()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@3688eb5b]" started-at="2023-11-25T19:04:54 IST" name="ValidateFetchingAPlaylist" description="ValidateFetchingAPlaylist" finished-at="2023-11-25T19:04:54 IST" duration-ms="335" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateFetchingAPlaylist -->
-        <test-method signature="ValidateUpdatingAPlaylist()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@3688eb5b]" started-at="2023-11-25T19:04:54 IST" name="ValidateUpdatingAPlaylist" description="ValidateUpdatingAPlaylist" finished-at="2023-11-25T19:04:55 IST" duration-ms="404" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateUpdatingAPlaylist -->
-        <test-method signature="ValidateCreatingAPlaylistWithoutPlayListName()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@3688eb5b]" started-at="2023-11-25T19:04:55 IST" name="ValidateCreatingAPlaylistWithoutPlayListName" description="ValidateCreatingAPlaylistWithoutPlayListName" finished-at="2023-11-25T19:04:55 IST" duration-ms="308" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateCreatingAPlaylistWithoutPlayListName -->
-        <test-method signature="ValidateCreatingAPlaylistWithoutPlayListDescription()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@3688eb5b]" started-at="2023-11-25T19:04:55 IST" name="ValidateCreatingAPlaylistWithoutPlayListDescription" description="ValidateCreatingAPlaylistWithoutPlayListDescription" finished-at="2023-11-25T19:04:55 IST" duration-ms="572" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateCreatingAPlaylistWithoutPlayListDescription -->
-        <test-method signature="ValidateCreatingAPlaylistWithInvalidToken()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@3688eb5b]" started-at="2023-11-25T19:04:55 IST" name="ValidateCreatingAPlaylistWithInvalidToken" description="ValidateCreatingAPlaylistWithInvalidToken" finished-at="2023-11-25T19:04:56 IST" duration-ms="374" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateCreatingAPlaylistWithInvalidToken -->
-        <test-method signature="ValidateFetchingAPlaylistWithInvalidID()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@3688eb5b]" started-at="2023-11-25T19:04:56 IST" name="ValidateFetchingAPlaylistWithInvalidID" description="ValidateFetchingAPlaylistWithInvalidID" finished-at="2023-11-25T19:04:56 IST" duration-ms="308" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateFetchingAPlaylistWithInvalidID -->
-        <test-method signature="ValidateFetchingAPlaylistWithInvalidToken()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@3688eb5b]" started-at="2023-11-25T19:04:56 IST" name="ValidateFetchingAPlaylistWithInvalidToken" description="ValidateFetchingAPlaylistWithInvalidToken" finished-at="2023-11-25T19:04:57 IST" duration-ms="393" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateFetchingAPlaylistWithInvalidToken -->
-        <test-method signature="ValidateUpdatingAPlaylistWithoutPlayListName()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@3688eb5b]" started-at="2023-11-25T19:04:57 IST" name="ValidateUpdatingAPlaylistWithoutPlayListName" description="ValidateUpdatingAPlaylistWithoutPlayListName" finished-at="2023-11-25T19:04:57 IST" duration-ms="287" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateUpdatingAPlaylistWithoutPlayListName -->
-        <test-method signature="ValidateUpdatingAPlaylistWithoutPlayListDescription()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@3688eb5b]" started-at="2023-11-25T19:04:57 IST" name="ValidateUpdatingAPlaylistWithoutPlayListDescription" description="ValidateUpdatingAPlaylistWithoutPlayListDescription" finished-at="2023-11-25T19:04:57 IST" duration-ms="215" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateUpdatingAPlaylistWithoutPlayListDescription -->
-        <test-method signature="ValidateUpdatingAPlaylistWithoutPlayListNameAndWithoutPlayListDescription()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@3688eb5b]" started-at="2023-11-25T19:04:57 IST" name="ValidateUpdatingAPlaylistWithoutPlayListNameAndWithoutPlayListDescription" description="ValidateUpdatingAPlaylistWithoutPlayListNameAndWithoutPlayListDescription" finished-at="2023-11-25T19:04:57 IST" duration-ms="387" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateUpdatingAPlaylistWithoutPlayListNameAndWithoutPlayListDescription -->
-        <test-method signature="ValidateUpdatingAPlaylistWithInvalidToken()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@3688eb5b]" started-at="2023-11-25T19:04:57 IST" name="ValidateUpdatingAPlaylistWithInvalidToken" description="ValidateUpdatingAPlaylistWithInvalidToken" finished-at="2023-11-25T19:04:58 IST" duration-ms="197" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateUpdatingAPlaylistWithInvalidToken -->
-        <test-method signature="ValidateToAddIteamToPlayList()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@3688eb5b]" started-at="2023-11-25T19:04:58 IST" name="ValidateToAddIteamToPlayList" description="ValidateToAddIteamToPlayList" finished-at="2023-11-25T19:04:58 IST" duration-ms="586" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateToAddIteamToPlayList -->
-        <test-method signature="ValidateToRemoveIteamToPlayList()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@3688eb5b]" started-at="2023-11-25T19:04:58 IST" name="ValidateToRemoveIteamToPlayList" description="ValidateToRemoveIteamToPlayList" finished-at="2023-11-25T19:04:59 IST" duration-ms="286" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateToRemoveIteamToPlayList -->
-        <test-method signature="ValidateToAddIteamToPlayListwithInvalidPlayListID()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@3688eb5b]" started-at="2023-11-25T19:04:59 IST" name="ValidateToAddIteamToPlayListwithInvalidPlayListID" description="ValidateToAddIteamToPlayListwithInvalidPlayListID" finished-at="2023-11-25T19:04:59 IST" duration-ms="557" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateToAddIteamToPlayListwithInvalidPlayListID -->
-        <test-method signature="ValidateToAddIteamToPlayListWithoutUris()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@3688eb5b]" started-at="2023-11-25T19:04:59 IST" name="ValidateToAddIteamToPlayListWithoutUris" description="ValidateToAddIteamToPlayListWithoutUris" finished-at="2023-11-25T19:05:00 IST" duration-ms="616" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateToAddIteamToPlayListWithoutUris -->
-        <test-method signature="ValidateToAddIteamToPlayListWithInvalidToken()[pri:0, instance:com.spotify.oauth2.testcases.PlaylistTestCases@3688eb5b]" started-at="2023-11-25T19:05:00 IST" name="ValidateToAddIteamToPlayListWithInvalidToken" description="ValidateToAddIteamToPlayListWithoutPosition" finished-at="2023-11-25T19:05:00 IST" duration-ms="692" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateToAddIteamToPlayListWithInvalidToken -->
       </class> <!-- com.spotify.oauth2.testcases.PlaylistTestCases -->
     </test> <!-- MainXMLTestFile -->
   </suite> <!-- MainXMLSuiteFile -->

@@ -3,6 +3,7 @@ package com.spotify.oauth2.utils;
 import java.io.File;
 import java.util.HashMap;
 
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
@@ -25,6 +26,7 @@ public class SpecificationsBuilder {
 				.setBaseUri("https://api.spotify.com")
 				.setBasePath(Routes.BASE_PATH)
 //				.addHeader("Authorization", "Bearer " + TokenManager.getToken())
+				.addFilter(new AllureRestAssured())  // for printing the request and reponse in allure report
 				.log(LogDetail.ALL)
 				.build();
 

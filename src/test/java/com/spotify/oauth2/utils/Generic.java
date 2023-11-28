@@ -18,7 +18,7 @@ public class Generic {
 				.extract().response();
 	}
 
-	public static Response post(String acessToken, String endPoint, Object requestplaylist) {
+	public static Response post(String endPoint, Object requestplaylist, String acessToken) {
 		return given().spec(SpecificationsBuilder.getRequestSpec()).body(requestplaylist).auth().oauth2(acessToken)
 
 				.when().post(endPoint).then().spec(SpecificationsBuilder.getResponseSpec()).extract().response();

@@ -25,25 +25,27 @@ public class PlayListApi {
 				requestplaylist);
 	}
 
+//   @Step("Passing requestplaylist: {0} and acessToken: {1}")
+	@Step
 	public static Response post(Playlist requestplaylist, String acessToken) throws IOException {
 
-		return Generic.post(acessToken, Routes.USERS + "/" + ConfigLoader.getInstance().getUserID() + Routes.PLAYLISTS,
-				requestplaylist);
+		return Generic.post(Routes.USERS + "/" + ConfigLoader.getInstance().getUserID() + Routes.PLAYLISTS,
+				requestplaylist, acessToken);
 
 	}
 	
 	public static Response post(String PlayList_ID, IteamToAddPlayList addIteamToPlaylistrequest) throws IOException {
 
-		return Generic.post(TokenManager.getToken(), Routes.PLAYLISTS + "/" + PlayList_ID + Routes.TRACKS,
-				addIteamToPlaylistrequest);
+		return Generic.post(Routes.PLAYLISTS + "/" + PlayList_ID + Routes.TRACKS,
+				addIteamToPlaylistrequest, TokenManager.getToken());
 
 	}
 	
 	
 	public static Response post(String acessToken, String PlayList_ID, IteamToAddPlayList addIteamToPlaylistrequest) throws IOException {
 
-		return Generic.post(acessToken, Routes.PLAYLISTS + "/" + PlayList_ID + Routes.TRACKS,
-				addIteamToPlaylistrequest);
+		return Generic.post(Routes.PLAYLISTS + "/" + PlayList_ID + Routes.TRACKS,
+				addIteamToPlaylistrequest, acessToken);
 
 	}
 	

@@ -29,6 +29,8 @@ import com.spotify.oauth2.utils.TokenManager;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import io.restassured.RestAssured;
@@ -62,28 +64,28 @@ import java.util.Random;
 @Feature("Playlist API")
 public class PlaylistTestCases {
 
-//	public Playlist requestplaylist = new Playlist();
-//	public Playlist responsePlayList;
 	public ErrorRoot requestError;
 	public ErrorRoot responseError;
-//	private int randomInt;
-	
 	
 	@Description("This is for creating the PlayList")
 	@Story("Create a playlist story")
+	@Severity(SeverityLevel.BLOCKER)
 	@Test(description = "ValidateCreatingAPlaylist")
 	public void ValidateCreatingAPlaylist() throws IOException {
-
+	
 		Playlist.playlistBuilder(FakerData.GeneratePlayListName(), FakerData.GeneratePlayListDescription(), false);
 		Response response = PlayListApi.post(Playlist.requestplaylist, TokenManager.getToken());
+		System.out.println(Playlist.requestplaylist);
 		assertStatusCode(response.statusCode(), StatusCodes.CODE_201);
-		Playlist.SetUp("id", "name", response);
+		 Playlist.SetUp("id", "name", response);
 		assertPlaylist(Playlist.responsePlayList, Playlist.requestplaylist);
-
+		 
+		
 	}
 
 	@Description("This is for fetching the PlayList")
 	@Story("Fetching a playlist story")
+	@Severity(SeverityLevel.CRITICAL)
 	@Test(description = "ValidateFetchingAPlaylist")
 	public void ValidateFetchingAPlaylist() throws IOException {
 
@@ -97,6 +99,7 @@ public class PlaylistTestCases {
 	
 	@Description("This is for updating the PlayList")
 	@Story("Updating a playlist story")
+	@Severity(SeverityLevel.BLOCKER)
 	@Test(description = "ValidateUpdatingAPlaylist")
 	public void ValidateUpdatingAPlaylist() throws IOException {
 
@@ -108,6 +111,7 @@ public class PlaylistTestCases {
 
 	@Description("This is for creating the PlayList without the PlayList name")
 	@Story("Create a playlist story")
+	@Severity(SeverityLevel.CRITICAL)
 	@Test(description = "ValidateCreatingAPlaylistWithoutPlayListName")
 	public void ValidateCreatingAPlaylistWithoutPlayListName() throws IOException {
 
@@ -121,6 +125,7 @@ public class PlaylistTestCases {
 
 	@Description("This is for creating the PlayList without the PlayList Description")
 	@Story("Create a playlist story")
+	@Severity(SeverityLevel.MINOR)
 	@Test(description = "ValidateCreatingAPlaylistWithoutPlayListDescription")
 	public void ValidateCreatingAPlaylistWithoutPlayListDescription() throws IOException {
 
@@ -133,6 +138,7 @@ public class PlaylistTestCases {
 
 	@Description("This is for creating the PlayList with invalid token")
 	@Story("Create a playlist story")
+	@Severity(SeverityLevel.CRITICAL)
 	@Test(description = "ValidateCreatingAPlaylistWithInvalidToken")
 	public void ValidateCreatingAPlaylistWithInvalidToken() throws IOException {
 
@@ -146,6 +152,7 @@ public class PlaylistTestCases {
 
 	@Description("This is for fetching the PlayList")
 	@Story("Fetching a playlist story")
+	@Severity(SeverityLevel.CRITICAL)
 	@Test(description = "ValidateFetchingAPlaylistWithInvalidID")
 	public void ValidateFetchingAPlaylistWithInvalidID() throws IOException {
 
@@ -158,6 +165,7 @@ public class PlaylistTestCases {
 
 	@Description("This is for fetching the PlayList")
 	@Story("Fetching a playlist story")
+	@Severity(SeverityLevel.CRITICAL)
 	@Test(description = "ValidateFetchingAPlaylistWithInvalidToken")
 	public void ValidateFetchingAPlaylistWithInvalidToken() throws IOException {
 
@@ -170,6 +178,7 @@ public class PlaylistTestCases {
 
 	@Description("This is for updating the PlayList")
 	@Story("Updating a playlist story")
+	@Severity(SeverityLevel.CRITICAL)
 	@Test(description = "ValidateUpdatingAPlaylistWithoutPlayListName")
 	public void ValidateUpdatingAPlaylistWithoutPlayListName() throws IOException {
 
@@ -183,6 +192,7 @@ public class PlaylistTestCases {
 
 	@Description("This is for updating the PlayList")
 	@Story("Updating a playlist story")
+	@Severity(SeverityLevel.MINOR)
 	@Test(description = "ValidateUpdatingAPlaylistWithoutPlayListDescription")
 	public void ValidateUpdatingAPlaylistWithoutPlayListDescription() throws IOException {
 
@@ -196,6 +206,7 @@ public class PlaylistTestCases {
 
 	@Description("This is for updating the PlayList")
 	@Story("Updating a playlist story")
+	@Severity(SeverityLevel.CRITICAL)
 	@Test(description = "ValidateUpdatingAPlaylistWithoutPlayListNameAndWithoutPlayListDescription")
 	public void ValidateUpdatingAPlaylistWithoutPlayListNameAndWithoutPlayListDescription() throws IOException {
 
@@ -209,6 +220,7 @@ public class PlaylistTestCases {
 
 	@Description("This is for updating the PlayList")
 	@Story("Updating a playlist story")
+	@Severity(SeverityLevel.CRITICAL)
 	@Test(description = "ValidateUpdatingAPlaylistWithInvalidToken")
 	public void ValidateUpdatingAPlaylistWithInvalidToken() throws IOException {
 
@@ -224,6 +236,7 @@ public class PlaylistTestCases {
 	
 	@Description("This is for adding iteams to the PlayList")
 	@Story("adding iteams to PlayList story")
+	@Severity(SeverityLevel.BLOCKER)
 	@Test(description = "ValidateToAddIteamToPlayList")
 	public void ValidateToAddIteamToPlayList() throws IOException {
 
@@ -238,6 +251,7 @@ public class PlaylistTestCases {
 	
 	@Description("This is for adding iteams to the PlayList")
 	@Story("adding iteams to PlayList story")
+	@Severity(SeverityLevel.CRITICAL)
 	@Test(description = "ValidateToAddIteamToPlayListwithInvalidPlayListID")
 	public void ValidateToAddIteamToPlayListwithInvalidPlayListID() throws IOException {
 
@@ -253,6 +267,7 @@ public class PlaylistTestCases {
 	
 	@Description("This is for adding iteams to the PlayList")
 	@Story("adding iteams to PlayList story")
+	@Severity(SeverityLevel.CRITICAL)
 	@Test(description = "ValidateToAddIteamToPlayListWithoutUris")
 	public void ValidateToAddIteamToPlayListWithoutUris() throws IOException {
 
@@ -269,6 +284,7 @@ public class PlaylistTestCases {
 	
 	@Description("This is for adding iteams to the PlayList")
 	@Story("adding iteams to PlayList story")
+	@Severity(SeverityLevel.CRITICAL)
 	@Test(description = "ValidateToAddIteamToPlayListWithoutPosition")
 	public void ValidateToAddIteamToPlayListWithInvalidToken() throws IOException {
 
@@ -286,6 +302,7 @@ public class PlaylistTestCases {
 	
 	@Description("This is for remove iteams to the PlayList")
 	@Story("Remove iteams to PlayList story")
+	@Severity(SeverityLevel.CRITICAL)
 	@Test(description = "ValidateToRemoveIteamToPlayList")
 	public void ValidateToRemoveIteamToPlayList() throws IOException {
 		
@@ -297,6 +314,8 @@ public class PlaylistTestCases {
 	}
 	
 	
+//	@Step(" ActualStatusCode: {0} and statuscode: {1}")
+	@Step
 	public void assertStatusCode(int ActualStatusCode, StatusCodes statuscode) {
 		assertThat(ActualStatusCode, equalTo(statuscode.code));
 	}
@@ -306,6 +325,8 @@ public class PlaylistTestCases {
 		assertThat(responseError.getError().getMessage(), equalTo(ExpectedMessage));
 	}
 
+//  @Step(" responsePlayList: {0} and requestplaylist: {1}")
+	@Step
 	public void assertPlaylist(Playlist responsePlayList, Playlist requestplaylist) {
 		assertThat(responsePlayList.getName(), equalTo(requestplaylist.getName()));
 		assertThat(responsePlayList.getDescription(), equalTo(requestplaylist.getDescription()));
