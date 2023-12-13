@@ -1,6 +1,7 @@
 package com.spotify.oauth2.applicationApi;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 import java.io.IOException;
 
@@ -17,6 +18,7 @@ import com.spotify.oauth2.utils.TokenManager;
 
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
 
 public class PlayListApi {
 
@@ -33,47 +35,57 @@ public class PlayListApi {
 				requestplaylist, acessToken);
 
 	}
+
+	public static ValidatableResponse post(Playlist requestplaylist, String JsonSchema ,String acessToken) throws IOException {
+
+		return Generic.post(Routes.USERS + "/" + ConfigLoader.getInstance().getUserID() + Routes.PLAYLISTS,
+				requestplaylist, JsonSchema ,acessToken);
+
+	}
+	
+	public static ValidatableResponse post(String PlayList_ID, IteamToAddPlayList addIteamToPlaylistrequest, String JsonSchema ,String acessToken) throws IOException {
+
+		return Generic.post(Routes.PLAYLISTS + "/" + PlayList_ID + Routes.TRACKS,
+				addIteamToPlaylistrequest, JsonSchema ,acessToken);
+
+	}
+	
 	
 	public static Response post(String PlayList_ID, IteamToAddPlayList addIteamToPlaylistrequest) throws IOException {
 
-		return Generic.post(Routes.PLAYLISTS + "/" + PlayList_ID + Routes.TRACKS,
-				addIteamToPlaylistrequest, TokenManager.getToken());
+		return Generic.post(Routes.PLAYLISTS + "/" + PlayList_ID + Routes.TRACKS, addIteamToPlaylistrequest,
+				TokenManager.getToken());
+
+	}
+
+	public static Response post(String acessToken, String PlayList_ID, IteamToAddPlayList addIteamToPlaylistrequest)
+			throws IOException {
+
+		return Generic.post(Routes.PLAYLISTS + "/" + PlayList_ID + Routes.TRACKS, addIteamToPlaylistrequest,
+				acessToken);
 
 	}
 	
-	
-	public static Response post(String acessToken, String PlayList_ID, IteamToAddPlayList addIteamToPlaylistrequest) throws IOException {
 
-		return Generic.post(Routes.PLAYLISTS + "/" + PlayList_ID + Routes.TRACKS,
-				addIteamToPlaylistrequest, acessToken);
-
-	}
 	
-	public static Response delete(String PlayList_ID, IteamRemoveToPlayList removeIteamToPlaylistrequest) throws IOException {
+	
+
+	public static Response delete(String PlayList_ID, IteamRemoveToPlayList removeIteamToPlaylistrequest)
+			throws IOException {
 
 		return Generic.delete(TokenManager.getToken(), Routes.PLAYLISTS + "/" + PlayList_ID + Routes.TRACKS,
 				removeIteamToPlaylistrequest);
 
 	}
-	
-	
-	
-	public static Response update(String PlayList_ID, String acessToken, Playlist requestplaylist)
-	{
-		return Generic.update(Routes.PLAYLISTS + "/" + PlayList_ID, acessToken, requestplaylist );
-	}
 
+	public static Response update(String PlayList_ID, String acessToken, Playlist requestplaylist) {
+		return Generic.update(Routes.PLAYLISTS + "/" + PlayList_ID, acessToken, requestplaylist);
+	}
 
 	public static Response get(String PlayList_ID) {
 		return Generic.get(Routes.PLAYLISTS + "/" + PlayList_ID);
 
 	}
-	
-	public static Response get() throws IOException
-	{
-		return Generic.get(Routes.TRACKS + "/" + FetchTrack.track_id , TokenManager.getToken());
-	}
-
 
 	public static Response get(String PlayList_ID, String acessToken) {
 		return Generic.get(Routes.PLAYLISTS + "/" + PlayList_ID, acessToken);

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class Artist {
 
     @JsonProperty("external_urls")
-    private ExternalUrls externalUrls;
+    private ExternalUrls__1 externalUrls;
     @JsonProperty("href")
     private String href;
     @JsonProperty("id")
@@ -23,12 +23,12 @@ public class Artist {
     private String uri;
 
     @JsonProperty("external_urls")
-    public ExternalUrls getExternalUrls() {
+    public ExternalUrls__1 getExternalUrls() {
         return externalUrls;
     }
 
     @JsonProperty("external_urls")
-    public void setExternalUrls(ExternalUrls externalUrls) {
+    public void setExternalUrls(ExternalUrls__1 externalUrls) {
         this.externalUrls = externalUrls;
     }
 

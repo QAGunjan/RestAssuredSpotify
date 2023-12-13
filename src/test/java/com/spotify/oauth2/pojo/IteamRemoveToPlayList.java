@@ -4,6 +4,7 @@ package com.spotify.oauth2.pojo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -30,8 +31,12 @@ public class IteamRemoveToPlayList {
  
 	public static IteamRemoveToPlayList playlistBuilder(String uri, String snapshotId)
 	{
-		List<Track> alltrack = new ArrayList<>();
-		alltrack.add(Track.SetUp(uri));
+		
+		Track track = new Track();
+		track.setUri(uri);
+		
+		List<Track> alltrack = new LinkedList<>();
+		alltrack.add(track);
 		
 		removeIteamToPlaylistrequest = new IteamRemoveToPlayList();
 		

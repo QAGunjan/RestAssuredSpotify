@@ -22,7 +22,6 @@ public class FetchTrack {
 	
 	
 	public static FetchTrack responsePlayList;
-	public static String track_id = "6rqhFgbbKwnb9MLmUQDhG6";
 
     @JsonProperty("album")
     private Album album;

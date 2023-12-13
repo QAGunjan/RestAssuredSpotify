@@ -1,6 +1,7 @@
 
 package com.spotify.oauth2.pojo;
 
+import java.util.LinkedList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -28,8 +29,11 @@ public class IteamToAddPlayList {
 	private String snapshot_id;
 	
 
-	public static IteamToAddPlayList playlistBuilder(List<String> uris, Integer position) {
+	public static IteamToAddPlayList playlistBuilder(String uri, Integer position) {
 
+		List<String> uris = new LinkedList<>();
+		 uris.add(uri);
+		 
 		addIteamToPlaylistrequest = new IteamToAddPlayList();
 		addIteamToPlaylistrequest.setUris(uris);
 		addIteamToPlaylistrequest.setPosition(position);

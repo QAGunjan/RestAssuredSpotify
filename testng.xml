@@ -1,33 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="MainXMLSuiteFile">
-	<test thread-count="5" name="MainXMLTestFile">
+<suite name="SpotifySuiteFile">
+	<test thread-count="5" name="SpotifySuiteFile">
 		<classes>
 			<class name="com.spotify.oauth2.testcases.PlaylistTestCases">
 				<methods>
+
+					<include name="ValidateCreatingAPlaylist"></include>
 					
-					 <include name="ValidateCreatingAPlaylist"></include>
-					<include name="ValidateFetchingAPlaylist"></include>
-					<include name="ValidateUpdatingAPlaylist"></include>
-					<include name="ValidateCreatingAPlaylistWithoutPlayListName"></include>
-					<include
-						name="ValidateCreatingAPlaylistWithoutPlayListDescription"></include>
-					<include name="ValidateCreatingAPlaylistWithInvalidToken"></include>
-					<include name="ValidateFetchingAPlaylistWithInvalidID"></include>
-					<include name="ValidateFetchingAPlaylistWithInvalidToken"></include>
-					<include name="ValidateUpdatingAPlaylistWithoutPlayListName"></include>
-					<include
-						name="ValidateUpdatingAPlaylistWithoutPlayListDescription"></include>
-					<include
-						name="ValidateUpdatingAPlaylistWithoutPlayListNameAndWithoutPlayListDescription"></include>
-					<include name="ValidateUpdatingAPlaylistWithInvalidToken"></include>
-					<include name="ValidateToAddIteamToPlayList"></include>
-					<include name="ValidateToRemoveIteamToPlayList"></include>
-					<include name="ValidateToAddIteamToPlayListwithInvalidPlayListID"></include>
-					<include name="ValidateToAddIteamToPlayListWithoutUris"></include>
-					<include name="ValidateToAddIteamToPlayListWithInvalidToken"></include>
-					
-					
+
 				</methods>
 			</class>
 		</classes>

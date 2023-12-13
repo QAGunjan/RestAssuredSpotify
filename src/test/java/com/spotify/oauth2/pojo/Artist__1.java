@@ -3,13 +3,13 @@ package com.spotify.oauth2.pojo;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
+
 public class Artist__1 {
 
     @JsonProperty("external_urls")
-    private ExternalUrls__2 externalUrls;
+    private ExternalUrls__3 externalUrls;
     @JsonProperty("href")
     private String href;
     @JsonProperty("id")
@@ -22,12 +22,12 @@ public class Artist__1 {
     private String uri;
 
     @JsonProperty("external_urls")
-    public ExternalUrls__2 getExternalUrls() {
+    public ExternalUrls__3 getExternalUrls() {
         return externalUrls;
     }
 
     @JsonProperty("external_urls")
-    public void setExternalUrls(ExternalUrls__2 externalUrls) {
+    public void setExternalUrls(ExternalUrls__3 externalUrls) {
         this.externalUrls = externalUrls;
     }
 

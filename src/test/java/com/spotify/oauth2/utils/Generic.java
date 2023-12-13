@@ -1,8 +1,10 @@
 package com.spotify.oauth2.utils;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 import java.util.HashMap;
+
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -21,8 +23,20 @@ public class Generic {
 	public static Response post(String endPoint, Object requestplaylist, String acessToken) {
 		return given().spec(SpecificationsBuilder.getRequestSpec()).body(requestplaylist).auth().oauth2(acessToken)
 
-				.when().post(endPoint).then().spec(SpecificationsBuilder.getResponseSpec()).extract().response();
+				.when().post(endPoint).then().spec(SpecificationsBuilder.getResponseSpec())
+		.extract().response();
 	}
+	
+	
+	// This method is for - Validating the JsonSchema
+public static ValidatableResponse post(String endPoint, Object requestplaylist, String JsonSchema, String acessToken) {
+		
+		return given().spec(SpecificationsBuilder.getRequestSpec()).body(requestplaylist)
+				.auth().oauth2(acessToken).when().post(endPoint).then()
+				.spec(SpecificationsBuilder.getResponseSpec()).assertThat().body(matchesJsonSchemaInClasspath(JsonSchema));
+	}
+	
+	
 	
 	public static Response postAccount(HashMap<String, String> formparams, String endPoint) {
 		return given(SpecificationsBuilder.getAccountRequestSpec()).formParams(formparams).when().post(endPoint).then()

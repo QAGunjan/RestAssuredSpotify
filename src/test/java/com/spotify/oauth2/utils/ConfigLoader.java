@@ -10,7 +10,9 @@ public class ConfigLoader {
 
 	private ConfigLoader() throws IOException {
 		prop = ConfigProperties
-				.readConfigData("D:\\ECLIPSE_LATEST\\RestAssuredSpotify\\src\\test\\resources\\config.properties");
+				.readConfigData("D:\\RestAssured\\RestAssuredSpotify\\src\\test\\resources\\PropertiesFiles\\config.properties");
+		
+		
 	}
 
 	public static ConfigLoader getInstance() throws IOException {

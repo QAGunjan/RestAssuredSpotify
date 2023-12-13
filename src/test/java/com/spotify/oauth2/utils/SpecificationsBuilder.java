@@ -23,7 +23,7 @@ public class SpecificationsBuilder {
 //		PrintStream printOutPut= new PrintStream(new File("RestAssured.log"));
 
 		return new RequestSpecBuilder()
-				.setBaseUri("https://api.spotify.com")
+				.setBaseUri(Routes.BASE_URI)
 				.setBasePath(Routes.BASE_PATH)
 //				.addHeader("Authorization", "Bearer " + TokenManager.getToken())
 				.addFilter(new AllureRestAssured())  // for printing the request and reponse in allure report
@@ -44,7 +44,7 @@ public class SpecificationsBuilder {
 	{
 		
 		return new RequestSpecBuilder()
-				.setBaseUri("https://accounts.spotify.com")
+				.setBaseUri(Routes.BASE_Account_URI)
 				.setContentType(ContentType.URLENC)
 				.log(LogDetail.ALL)
 				.build();

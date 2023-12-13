@@ -7,6 +7,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
@@ -59,9 +62,11 @@ public class Playlist {
 	private String uri;
 
 	
+	
 //	@Step("Request body has generated with name: {0}, description: {1} and _public: {2}")
 	@Step
 	public static Playlist playlistBuilder(String name, String description, boolean _public) {
+		
 	    requestplaylist = new Playlist();
 		requestplaylist.setName(name);
 		requestplaylist.setDescription(description);
@@ -71,15 +76,21 @@ public class Playlist {
 
 	}
 	
-	@Step("Setting Up ID: {0}, Name: {1} and response: {2}")
-	public static Playlist SetUp(String ID, String Name, Response response) {
-		 responsePlayList = response.as(Playlist.class);
+	
+	@Step
+	public static Playlist SetUp(Response response) {
+		
 
-		responsePlayList.setId(response.path(ID));
-		responsePlayList.setName(response.path(Name));
+		 responsePlayList = response.as(Playlist.class);  // de - serialization
+
+		responsePlayList.setId(response.jsonPath().get("id"));
+		
 		
 		return responsePlayList;
+	
 	}
+	
+	
 	
 	
 	
