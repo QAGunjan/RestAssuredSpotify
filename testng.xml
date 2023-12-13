@@ -7,7 +7,30 @@
 				<methods>
 
 					<include name="ValidateCreatingAPlaylist"></include>
-					
+					<include name="ValidatePlayListJsonSchema"></include>
+					<include name="ValidateFetchingAPlaylist"></include>
+					<include name="ValidateUpdatingAPlaylist"></include>
+					<include name="ValidateCreatingAPlaylistWithoutPlayListName"></include>
+					<include
+						name="ValidateCreatingAPlaylistWithoutPlayListDescription"></include>
+					<include name="ValidateCreatingAPlaylistWithInvalidToken"></include>
+					<include name="ValidateFetchingAPlaylistWithInvalidID"></include>
+					<include name="ValidateFetchingAPlaylistWithInvalidToken"></include>
+					<include name="ValidateUpdatingAPlaylistWithoutPlayListName"></include>
+					<include
+						name="ValidateUpdatingAPlaylistWithoutPlayListDescription"></include>
+					<include
+						name="ValidateUpdatingAPlaylistWithoutPlayListNameAndWithoutPlayListDescription"></include>
+					<include name="ValidateUpdatingAPlaylistWithInvalidToken"></include>
+					<include name="ValidateToAddIteamToPlayList"></include>
+
+					<include name="ValidateToGetIteamToPlayList"></include>
+					<include
+						name="ValidateToAddIteamToPlayListwithInvalidPlayListID"></include>
+					<include name="ValidateToAddIteamToPlayListWithoutUris"></include>
+					<include name="ValidateToAddIteamToPlayListWithInvalidToken"></include>
+					<include name="ValidateAddIteamToPlayListJsonSchema"></include>
+					<include name="ValidateToRemoveIteamToPlayList"></include>
 
 				</methods>
 			</class>
